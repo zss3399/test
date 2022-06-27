@@ -1,116 +1,15 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-	<title>刮刮乐</title>
-	<style type="text/css">
-	*{
-			margin: 0;
-			padding: 0;
-			outline: 0;
-			box-sizing: border-box;
-			-webkit-box-sizing: border-box;
-		}
-	.div1{
-		margin: 20px auto;
-		width: 250px;
-		height: 100px;
-		position: relative;
-	}
-	.divn{
-		width: 100%;
-		height: 100%;
-		line-height: 100px;
-		border: 1px solid #ccc;
-		text-align: center;
-	}	
-	#cc{
-		position: absolute;
-		top: 0;
-		left: 0;
-		cursor: cell;
-	}
-	#dc{
-		appearance: none;
-		-webkit-appearance: none;
-		display: block;
-		width: 50%;
-		height: 40px;
-		line-height:38px;
-		border: 1px solid #158EC6;
-		text-align: center;
-		margin: 10px auto;
-		background-color: transparent;
-	}
-		
-</style>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 </head>
 <body>
-	<div class="div1">
-		<div class="divn"></div>
-		<canvas id="cc" width="250" height="100"></canvas>
-	</div>
-	<button id="dc">重新抽奖</button>
-	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-	<script>
-	var jq=['谢谢参与','恭喜您获得200元购物券','恭喜您获得现金100元','您本次抽到现金10元','恭喜您获得香奈儿系列香水一瓶','0_0','^o^'];
-	var text=jq[Math.floor(Math.random()*6)];
-	//var text=jq[5];
-	$('.divn').text(text);
-		var c=document.getElementById('cc'),flag=0;
-		var cxt=c.getContext('2d');
-		cxt.beginPath();
-		cxt.rect(0,0,250,100);
-		cxt.fillStyle='#ccc';
-		//cxt.lineCap='round';
-		cxt.fill();
-		cxt.beginPath();
-		cxt.rect(0,0,250,50);
-		cxt.fillStyle='red';
-		cxt.fill();
-	
-		c.addEventListener('mousedown',mousedown1,false);
-		document.addEventListener('mouseup',mouseup1,false);
-		document.addEventListener('mousemove',mousemove1,false);
-		c.addEventListener('touchstart',mousedown1,false);
-		document.addEventListener('touchend',mouseup1,false);
-		document.addEventListener('touchmove',mousemove1,false);
-		function draw(x,y){
-			cxt.globalCompositeOperation='destination-out';
-			cxt.beginPath();
-			cxt.arc(x,y,10,0,Math.PI*2);
-			cxt.fill();
-			//cxt.clearRect(x-10,y-10,20,20);
-		}
-		function mousedown1(e){
-		e.preventDefault()	;
-		flag=1;
-		}
-		function mouseup1(e){
-		//e.preventDefault()	;
-		flag=0;
-		}
-		function mousemove1(e){
-		//e.preventDefault()	;
-		if(flag){
-			if(e.changedTouches){
-				e=e.changedTouches[0];
-			}
-		var mousex=e.clientX-$(c).offset().left;
-		var mousey=e.clientY-$(c).offset().top;
-		draw(mousex,mousey);
-		}
-		}
-		
-		$('#dc').click(function(e){
-		  e.preventDefault();
-	      window.location.href=window.location.href;
-	})
-
-
-
-	
-	</script>
+	<ul>
+		<li>1</li>
+		<li>1</li>
+	</ul>
 </body>
 </html>
